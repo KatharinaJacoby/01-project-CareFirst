@@ -4,7 +4,7 @@ aiming to support care, safety, and retention—rather than just logistics optim
 ■ Overview
 This project explores an early-stage hybrid architecture combining clinical time series, contextual
 features, and system-level stressors to model patient outcomes and staff-related risks. It is
-**inspired by** research like the EPONA project, but follows a **more compassionate, patient- and
+**inspired by** research like the APONA project, but follows a **more compassionate, patient- and
 staff-centered approach**.
 ■ Motivation
 Modern healthcare triage systems often prioritize efficiency metrics over human well-being. This

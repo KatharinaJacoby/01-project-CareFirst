@@ -1,6 +1,7 @@
 
-# Hamburg Safety Mamba Hybrid Prototype Development
-
+# Day 1+2
+**Hamburg Safety Mamba Hybrid Prototype Development
+**
 This document chronicles the development of the Hamburg Safety Mamba hybrid prototype through iterative testing, debugging, and methodology refinements. The project is inspired by the APONA framework but is driven by a safety-first, clinician-informed approach that prioritizes patient and staff wellbeing.
 
 ## 1. Project Overview

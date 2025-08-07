@@ -1,0 +1,96 @@
+
+## 🗓️ Day 4 — Simplified Baseline Modeling for AI-Supported Patient Pathways (Hamburg)
+
+This log documents the decisions and results of **Day 4** in the development of an AI-supported coordination model for patient pathways — focused on emergency medical services (EMS) and hospital handoffs in Hamburg, Germany.
+
+---
+
+### 🧭 Goals for Day 4
+
+* **Finish the exploratory data inspection**
+* **Remove overly synthetic features** (initial vitals)
+* **Build a simple, explainable baseline model**
+* Maintain a **robust, clinical perspective** and keep modeling grounded
+
+---
+
+### ✅ Key Changes
+
+#### 🔹 Switched from Mamba to MLP
+
+* Mamba was initially considered, but given the **demonstration scope** and the need for **debuggable simplicity**, we opted for a straightforward `MLP` model instead.
+* No unnecessary complexity or hype: the goal is to **show that coordination can be modeled ethically and functionally**.
+
+#### 🔹 Removed Initial Vitals
+
+* EMS teams **actively treat patients**, so initial vitals are both **dynamic** and **misleading**.
+* Final **triage code** from EMS was retained — representing the team's integrated assessment.
+* This simplification aligns better with real-world triage processes and reduces noise in the model.
+
+#### 🔹 Finalized Hospital List
+
+* Simulated coordination across **major Hamburg hospitals** (UKE, Altona, Wandsbek, St. Georg, BG Boberg, etc.)
+* Inpatient flow restricted to **UKE only**, for clarity and realistic specialization assumptions.
+* Capacity signals are simulated per-hospital as IVENA-style availability.
+
+---
+
+### 🧠 Modeling Highlights
+
+* Used an `MLP` with categorical + normalized features.
+* Trained to predict `outputs_ward_assignment_suitability` (0–1 score).
+* Train and validation losses decreased smoothly.
+* Visual alignment between predicted vs. actual scores.
+
+#### Losses:
+
+```text
+Final Train Loss ≈ 1.70
+Final Val Loss ≈ 0.75
+```
+
+---
+
+### 📊 Visualization Snapshot
+
+* Distribution plots
+* Boxplots (coordination time vs home type)
+* Prediction scatter
+
+The visualizations validated assumptions made during simulation and helped confirm basic realism.
+
+---
+
+### 🧱 Feature Inputs Used
+
+* `age`, `sex`, `home_type`, `arrival_mode`, `suspected_condition`
+* `ems_triage_code`
+* `ivena_availability_*` (per hospital)
+
+---
+
+### 🏁 Current Status
+
+* ✅ Exploratory data inspection complete
+* ✅ Clean simulation + modeling baseline in place
+* ✅ Full pipeline debugged and reproducible
+
+---
+
+### 🚧 Next Steps
+
+* Add multi-task targets (e.g. coordination complexity, pathway latency)
+* Continue adjusting simulation for realism (suspected conditions, triage outcomes)
+* Document pathways for **critical vs. elective**, **pediatrics**, **OBGYN**
+* Build transparent evaluation tools (prediction scatter, over/under-routing cases)
+
+---
+
+### 🤝 Contribution Goals
+
+This is a **research-only**, **non-deployment** project shared publicly to:
+
+* Offer clinically aligned alternatives to exploitative hospital coordination AI
+* Share open notebooks, simulation code, and modeling steps
+* Invite feedback and collaboration from both technical and medical communities
+

@@ -1,12 +1,12 @@
 
 # Day 1+2
-**Hamburg Safety Mamba Hybrid Prototype Development
+**Hamburg Safety Mamba Hybrid Prototype Project
 **
 This document chronicles the development of the Hamburg Safety Mamba hybrid prototype through iterative testing, debugging, and methodology refinements. The project is inspired by the APONA framework but is driven by a safety-first, clinician-informed approach that prioritizes patient and staff wellbeing.
 
 ## 1. Project Overview
 
-- **Goal**: Build a hybrid clinical–temporal model to predict system breakdown, staff wellbeing deterioration (burnout, retention risk), and patient safety degradation in Hamburg EMS/ED workflows.
+- **Idea**: Build a hybrid clinical–temporal model to predict system breakdown, staff wellbeing deterioration (burnout, retention risk), and patient safety degradation in Hamburg EMS/ED workflows.
 - **Architecture**:
   - **Clinical encoder**: `HamburgClinicalEncoder` transforms vitals, demographics, system, and environmental features into a unified representation.
   - **Backbone**: GRU (proof‑of‑concept) with a future plan to swap in a Mamba temporal backbone for long‑range reasoning.
@@ -99,7 +99,15 @@ Each cycle revealed missing imports or mismatches that were promptly fixed follo
 4. **Visualization and Reporting**: Plot training curves, auxiliary output distributions, and issue transparent session logs.
 5. **Documentation**: Archive this merged development log for reproducibility.
 
----
+**Contribution Goals**
+
+This is a research-only, non-deployment project shared publicly to:
+
+    Offer clinically aligned alternatives to exploitative hospital coordination AI
+
+    Share open notebooks, simulation code, and modeling steps
+
+    Invite feedback and collaboration from both technical and medical communities
 
 **Collaboration Acknowledgment:**  
-This document was assembled interactively by Katharina (physician-led AI safety researcher) and ChatGPT, summarizing the session’s bugs, fixes, and methodological steps.
+This document was assembled interactively by Katharina (physician-led AI researcher) and ChatGPT, summarizing the session’s bugs, fixes, and methodological steps.

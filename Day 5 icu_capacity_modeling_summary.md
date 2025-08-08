@@ -1,5 +1,5 @@
 
-# ICU Capacity Modeling — Progress Summary
+# Day 5 ICU Capacity Modeling — Progress Summary
 
 ## 1. Project Overview
 We aimed to build a hospital capacity prediction model focusing on **ICU and non-ICU bed availability** at UKE (Universitätsklinikum Hamburg-Eppendorf), with realistic department sizes.  
